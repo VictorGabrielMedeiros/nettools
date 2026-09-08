@@ -1,4 +1,4 @@
-import { Globe, Wifi, Cpu, BadgeCheck, Tool, Lock, QrCode, FileJson, Braces, Search, Network } from 'lucide-react';
+import { Globe, Wifi, Cpu, BadgeCheck, Wrench, Lock, QrCode, Network } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 
@@ -42,7 +42,7 @@ const tools = [
     id: 'mikrotik',
     name: 'MikroTik Tools',
     description: 'Gerador rápido de comandos RouterOS (VLAN, Bridge, IP, NAT).',
-    icon: Tool,
+    icon: Wrench,
     path: '/mikrotik'
   },
   {

@@ -1,0 +1,66 @@
+.error-message {
+  color: var(--error);
+  background: rgba(239, 68, 68, 0.1);
+  padding: 1rem;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--error);
+  font-weight: 500;
+}
+
+.table-container {
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.table-header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.table-header-actions h3 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.subnet-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.subnet-table th,
+.subnet-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--surface-border);
+  white-space: nowrap;
+}
+
+.subnet-table th {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='light'] .subnet-table th {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.subnet-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='light'] .subnet-table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.subnet-table td {
+  font-family: monospace;
+  font-size: 0.875rem;
+}

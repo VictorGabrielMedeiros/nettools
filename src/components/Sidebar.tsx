@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Home, Globe, Wifi, BadgeCheck, Cpu, Settings, Tool } from 'lucide-react';
+import { Home, Globe, Wifi, BadgeCheck, Cpu, Settings, Wrench } from 'lucide-react';
 import './Sidebar.css';
 
 const menuItems = [
@@ -9,13 +9,13 @@ const menuItems = [
   { to: '/ip-analyzer', label: 'Analisador de IP', icon: BadgeCheck },
   { to: '/mtu-mss', label: 'MTU / MSS', icon: Cpu },
   { to: '/bandwidth', label: 'Largura de Banda', icon: Cpu },
-  { to: '/mikrotik', label: 'MikroTik Tools', icon: Tool },
-  { to: '/password', label: 'Gerador de Senhas', icon: Tool },
-  { to: '/qr', label: 'Gerador de QR Code', icon: Tool },
-  { to: '/json', label: 'Formatador JSON', icon: Tool },
-  { to: '/base64', label: 'Base64 Encoder', icon: Tool },
-  { to: '/regex', label: 'Testador Regex', icon: Tool },
-  { to: '/port-checker', label: 'Teste de Portas', icon: Tool },
+  { to: '/mikrotik', label: 'MikroTik Tools', icon: Wrench },
+  { to: '/password', label: 'Gerador de Senhas', icon: Wrench },
+  { to: '/qr', label: 'Gerador de QR Code', icon: Wrench },
+  { to: '/json', label: 'Formatador JSON', icon: Wrench },
+  { to: '/base64', label: 'Base64 Encoder', icon: Wrench },
+  { to: '/regex', label: 'Testador Regex', icon: Wrench },
+  { to: '/port-checker', label: 'Teste de Portas', icon: Wrench },
   { to: '/about', label: 'Sobre', icon: Settings },
 ];
 
