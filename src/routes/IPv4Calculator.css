@@ -1,0 +1,136 @@
+.tool-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tool-header h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.calculator-form {
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+#ipInput {
+  width: 300px;
+}
+
+.cidr-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+[data-theme='light'] .cidr-input-wrapper {
+  background: #ffffff;
+}
+
+.cidr-input-wrapper:focus-within {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.slash {
+  padding-left: 1rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+#cidrInput {
+  width: 80px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+#cidrInput:focus {
+  box-shadow: none;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.result-card {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.result-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.result-value {
+  font-size: 1.125rem;
+  font-family: monospace;
+  word-break: break-all;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.btn-copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  padding: 0.5rem;
+  border: 1px solid var(--surface-border);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  margin-top: auto;
+}
+
+[data-theme='light'] .btn-copy {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.btn-copy:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+@media (max-width: 768px) {
+  #ipInput {
+    width: 100%;
+  }
+  
+  .calculator-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
