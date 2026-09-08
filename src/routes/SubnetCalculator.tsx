@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Copy, CheckCircle2 } from 'lucide-react';
 import { parseIpAndCidr } from '../utils/ipUtils';
-import { divideSubnet, SubnetResult } from '../utils/subnetUtils';
+import { divideSubnet } from '../utils/subnetUtils';
+import type { SubnetResult } from '../utils/subnetUtils';
 import { copyToClipboard } from '../utils/clipboard';
 import './SubnetCalculator.css';
 

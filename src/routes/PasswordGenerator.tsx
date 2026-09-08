@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Copy, CheckCircle2, RefreshCw } from 'lucide-react';
-import { generatePassword, calculatePasswordStrength, PasswordOptions } from '../utils/passwordUtils';
+import { generatePassword, calculatePasswordStrength } from '../utils/passwordUtils';
+import type { PasswordOptions } from '../utils/passwordUtils';
 import { copyToClipboard } from '../utils/clipboard';
 import './PasswordGenerator.css';
 
