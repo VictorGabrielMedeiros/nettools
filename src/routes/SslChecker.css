@@ -1,0 +1,120 @@
+.ssl-container {
+  padding: 2rem;
+  max-width: 800px;
+}
+
+.ssl-search {
+  margin-bottom: 2rem;
+}
+
+.search-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.search-wrapper input {
+  flex: 1;
+}
+
+.browser-warning-box {
+  display: flex;
+  gap: 1.5rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  align-items: flex-start;
+}
+
+.warning-content h3 {
+  color: var(--warning);
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.warning-content p {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.btn-ssllabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #00558b; /* SSL Labs blue */
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--border-radius-sm);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.btn-ssllabs:hover {
+  opacity: 0.9;
+}
+
+.ssl-simulated-info {
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+}
+
+[data-theme='light'] .ssl-simulated-info {
+  background: rgba(0,0,0,0.02);
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.info-header h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+}
+
+.ssl-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ssl-checklist li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.ssl-checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--success);
+  font-weight: bold;
+}
+
+.ssl-checklist li strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+  .search-wrapper {
+    flex-direction: column;
+  }
+  
+  .browser-warning-box {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

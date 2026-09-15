@@ -15,6 +15,16 @@ import JsonFormatter from './routes/JsonFormatter';
 import Base64Encoder from './routes/Base64Encoder';
 import RegexTester from './routes/RegexTester';
 import PortChecker from './routes/PortChecker';
+import DnsLookup from './routes/DnsLookup';
+import CidrPlanner from './routes/CidrPlanner';
+import NetworkPlanner from './routes/NetworkPlanner';
+import SslChecker from './routes/SslChecker';
+import SecurityHeaders from './routes/SecurityHeaders';
+import SpfAnalyzer from './routes/SpfAnalyzer';
+import JwtDecoder from './routes/JwtDecoder';
+import ChmodCalculator from './routes/ChmodCalculator';
+import CronGenerator from './routes/CronGenerator';
+import MacAnalyzer from './routes/MacAnalyzer';
 import About from './routes/About';
 import './styles/index.css';
 
@@ -51,6 +61,16 @@ function App() {
               <Route path="/base64" element={<Base64Encoder />} />
               <Route path="/regex" element={<RegexTester />} />
               <Route path="/port-checker" element={<PortChecker />} />
+              <Route path="/dns-lookup" element={<DnsLookup />} />
+              <Route path="/cidr-planner" element={<CidrPlanner />} />
+              <Route path="/network-planner" element={<NetworkPlanner />} />
+              <Route path="/ssl-checker" element={<SslChecker />} />
+              <Route path="/security-headers" element={<SecurityHeaders />} />
+              <Route path="/spf-analyzer" element={<SpfAnalyzer />} />
+              <Route path="/jwt-decoder" element={<JwtDecoder />} />
+              <Route path="/chmod-calculator" element={<ChmodCalculator />} />
+              <Route path="/cron-generator" element={<CronGenerator />} />
+              <Route path="/mac-analyzer" element={<MacAnalyzer />} />
               <Route path="/about" element={<About />} />
             </Routes>
           </div>

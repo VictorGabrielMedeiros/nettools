@@ -1,0 +1,115 @@
+.jwt-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.jwt-input-section, .jwt-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.jwt-input-section h2, .jwt-card h2 {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--surface-border);
+  padding-bottom: 0.75rem;
+}
+
+.jwt-textarea {
+  flex: 1;
+  min-height: 400px;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  resize: vertical;
+  background: rgba(0,0,0,0.2);
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+[data-theme='light'] .jwt-textarea {
+  background: #fff;
+}
+
+.jwt-output-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.json-block {
+  background: rgba(0,0,0,0.3);
+  padding: 1rem;
+  border-radius: var(--border-radius-sm);
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  overflow-x: auto;
+  margin: 0;
+}
+
+[data-theme='light'] .json-block {
+  background: #f8fafc;
+  color: var(--primary-color);
+  border: 1px solid var(--surface-border);
+}
+
+.empty-state {
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.payload-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--surface-border);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.payload-header h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.exp-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 99px;
+  font-weight: 600;
+}
+
+.exp-badge.valid {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+}
+
+.exp-badge.expired {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--error);
+}
+
+.error-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .jwt-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .jwt-textarea {
+    min-height: 200px;
+  }
+}

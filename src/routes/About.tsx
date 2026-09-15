@@ -36,11 +36,11 @@ export default function About() {
           <div className="about-box glass-panel">
             <h3>Versão Atual</h3>
             <div className="version-info">
-              <span className="version-number">V1.1</span>
+              <span className="version-number">V2.0</span>
               <span className="version-date">Atualizado recentemente</span>
             </div>
             <p className="version-notes">
-              Novos módulos: Base64, Teste de Portas (simulado) e melhorias na interface responsiva (modo mobile).
+              Maior atualização até agora: 10 novos módulos incluindo DNS Lookup, SSL Checker, JWT Decoder, CIDR Planner, Cron Generator, e mais!
             </p>
           </div>
         </div>

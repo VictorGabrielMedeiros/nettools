@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import {
   Home, Globe, Wifi, BadgeCheck, Cpu, Settings,
   Wrench, Lock, QrCode, FileJson, Binary, Regex,
-  Network, Activity, X
+  Network, Activity, X, Search, ShieldCheck, Mail, Key, Terminal, Calendar, Laptop
 } from 'lucide-react';
 import './Sidebar.css';
 
@@ -12,20 +12,30 @@ interface SidebarProps {
 }
 
 const menuItems = [
-  { to: '/dashboard',   label: 'Dashboard',              icon: Home },
-  { to: '/ipv4',        label: 'Calculadora IPv4',        icon: Globe },
-  { to: '/subnet',      label: 'Sub-redes',               icon: Wifi },
-  { to: '/ip-analyzer', label: 'Analisador de IP',        icon: BadgeCheck },
-  { to: '/mtu-mss',     label: 'MTU / MSS',               icon: Cpu },
-  { to: '/bandwidth',   label: 'Largura de Banda',        icon: Activity },
-  { to: '/mikrotik',    label: 'MikroTik Tools',          icon: Wrench },
-  { to: '/password',    label: 'Gerador de Senhas',       icon: Lock },
-  { to: '/qr',          label: 'Gerador de QR Code',      icon: QrCode },
-  { to: '/json',        label: 'Formatador JSON',         icon: FileJson },
-  { to: '/base64',      label: 'Base64 Encoder',          icon: Binary },
-  { to: '/regex',       label: 'Testador Regex',          icon: Regex },
-  { to: '/port-checker',label: 'Teste de Portas',         icon: Network },
-  { to: '/about',       label: 'Sobre',                   icon: Settings },
+  { to: '/dashboard',         label: 'Dashboard',              icon: Home },
+  { to: '/ipv4',              label: 'Calculadora IPv4',        icon: Globe },
+  { to: '/subnet',            label: 'Sub-redes',               icon: Wifi },
+  { to: '/ip-analyzer',       label: 'Analisador de IP',        icon: BadgeCheck },
+  { to: '/cidr-planner',      label: 'CIDR Planner',            icon: Network },
+  { to: '/network-planner',   label: 'Network Planner',         icon: Laptop },
+  { to: '/mtu-mss',           label: 'MTU / MSS',               icon: Cpu },
+  { to: '/bandwidth',         label: 'Largura de Banda',        icon: Activity },
+  { to: '/mikrotik',          label: 'MikroTik Tools',          icon: Wrench },
+  { to: '/mac-analyzer',      label: 'MAC/OUI Analyzer',        icon: Search },
+  { to: '/dns-lookup',        label: 'DNS Lookup',              icon: Search },
+  { to: '/port-checker',      label: 'Teste de Portas',         icon: Network },
+  { to: '/ssl-checker',       label: 'SSL/TLS Checker',         icon: ShieldCheck },
+  { to: '/security-headers',  label: 'Security Headers',        icon: ShieldCheck },
+  { to: '/spf-analyzer',      label: 'SPF/DKIM Analyzer',       icon: Mail },
+  { to: '/password',          label: 'Gerador de Senhas',       icon: Lock },
+  { to: '/jwt-decoder',       label: 'JWT Decoder',             icon: Key },
+  { to: '/qr',                label: 'Gerador de QR Code',      icon: QrCode },
+  { to: '/json',              label: 'Formatador JSON',         icon: FileJson },
+  { to: '/base64',            label: 'Base64 Encoder',          icon: Binary },
+  { to: '/regex',             label: 'Testador Regex',          icon: Regex },
+  { to: '/chmod-calculator',  label: 'Chmod Calculator',        icon: Terminal },
+  { to: '/cron-generator',    label: 'Cron Generator',          icon: Calendar },
+  { to: '/about',             label: 'Sobre',                   icon: Settings },
 ];
 
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
@@ -63,7 +73,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
         <div className="sidebar-footer">
           <span>NetTools</span>
-          <span className="version-badge">v1.1</span>
+          <span className="version-badge">v2.0</span>
         </div>
       </aside>
     </>

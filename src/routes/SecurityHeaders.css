@@ -1,0 +1,7 @@
+/* Reusing SslChecker.css layout, adding few specific helpers */
+.d-block {
+  display: block;
+}
+.text-info {
+  color: var(--info);
+}
