@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
@@ -11,19 +12,29 @@ import MikrotikTools from './routes/MikrotikTools';
 import PasswordGenerator from './routes/PasswordGenerator';
 import QrCodeGenerator from './routes/QrCodeGenerator';
 import JsonFormatter from './routes/JsonFormatter';
-import Base64Tool from './routes/Base64Tool';
+import Base64Encoder from './routes/Base64Encoder';
 import RegexTester from './routes/RegexTester';
 import PortChecker from './routes/PortChecker';
 import About from './routes/About';
 import './styles/index.css';
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(prev => !prev);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <Router>
       <div className="app-container">
-        <Sidebar />
+        <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
         <div className="main-content">
-          <Header />
+          <Header onMenuToggle={toggleSidebar} />
           <div className="page-content">
             <Routes>
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
@@ -37,7 +48,7 @@ function App() {
               <Route path="/password" element={<PasswordGenerator />} />
               <Route path="/qr" element={<QrCodeGenerator />} />
               <Route path="/json" element={<JsonFormatter />} />
-              <Route path="/base64" element={<Base64Tool />} />
+              <Route path="/base64" element={<Base64Encoder />} />
               <Route path="/regex" element={<RegexTester />} />
               <Route path="/port-checker" element={<PortChecker />} />
               <Route path="/about" element={<About />} />

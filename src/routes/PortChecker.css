@@ -1,0 +1,122 @@
+.port-checker-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 700px;
+}
+
+.port-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.port-form .form-group:first-child {
+  flex: 2;
+  min-width: 200px;
+}
+
+.port-group {
+  flex: 1;
+  min-width: 100px;
+}
+
+.loading-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.status-result {
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--surface-border);
+  animation: fadeIn 0.3s ease-out;
+}
+
+[data-theme='light'] .status-result {
+  background: rgba(0,0,0,0.02);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.status-open {
+  border-color: rgba(16, 185, 129, 0.5);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.status-open .status-icon { color: var(--success); }
+
+.status-closed {
+  border-color: rgba(239, 68, 68, 0.5);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.status-closed .status-icon { color: var(--error); }
+
+.status-error {
+  border-color: rgba(245, 158, 11, 0.5);
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.status-error .status-icon { color: var(--warning); }
+
+.status-checking .status-icon { color: var(--accent-color); }
+
+.pulsing {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.status-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.status-details {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.browser-warning {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .port-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .port-form button {
+    margin-top: 1rem;
+  }
+}
