@@ -1,0 +1,353 @@
+.fp-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.fp-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--border-radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.fp-tab:hover {
+  border-color: var(--accent-color);
+  color: var(--text-primary);
+}
+
+.fp-tab.active {
+  background: var(--accent-glow);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.fp-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.fp-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+.fp-intro h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.fp-intro p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.scan-btn {
+  align-self: flex-start;
+}
+
+.risk-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.risk-banner.safe {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #10b981;
+}
+
+.risk-banner.moderate {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #f59e0b;
+}
+
+.risk-banner.high {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #ef4444;
+}
+
+.signals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.signal-card {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: border-color 0.2s;
+}
+
+.signal-card.suspicious {
+  border-color: rgba(245, 158, 11, 0.5);
+  background: rgba(245, 158, 11, 0.06);
+}
+
+.signal-key {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.signal-value {
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+.signal-flag {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: #f59e0b;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+/* Checker Tab */
+.checker-box {
+  padding: 2rem;
+}
+
+.checker-box h2 {
+  margin-top: 0;
+  color: var(--text-primary);
+}
+
+.checker-box > p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.ua-textarea {
+  width: 100%;
+  min-height: 120px;
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  resize: vertical;
+  background: rgba(0,0,0,0.2);
+  color: var(--text-primary);
+}
+
+[data-theme='light'] .ua-textarea {
+  background: #fff;
+}
+
+.ua-result {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border: 2px solid var(--result-color, var(--accent-color));
+  border-radius: var(--border-radius-md);
+  background: color-mix(in srgb, var(--result-color, var(--accent-color)) 10%, transparent);
+  animation: fadeIn 0.3s ease;
+}
+
+.ua-result svg {
+  color: var(--result-color, var(--accent-color));
+  flex-shrink: 0;
+}
+
+.ua-result strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  margin-bottom: 0.35rem;
+}
+
+.ua-result p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.ua-type-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 99px;
+  background: var(--result-color, var(--accent-color));
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.known-bots-list {
+  margin-top: 2rem;
+}
+
+.known-bots-list h3 {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.bots-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.bot-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+.bot-dot, .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.legend span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Guide Tab */
+.guide-content {
+  gap: 1.25rem;
+}
+
+.guide-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 2rem;
+  background: var(--accent-glow);
+  border-color: var(--accent-border);
+}
+
+.guide-icon {
+  color: var(--accent-color);
+}
+
+.guide-section h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+}
+
+.guide-section p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.guide-card {
+  padding: 1.5rem;
+}
+
+.guide-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-left: 4px solid;
+  padding-left: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.guide-card-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.guide-list {
+  padding-left: 1.25rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.guide-list li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.guide-footer {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.3);
+  font-size: 0.875rem;
+}
+
+.guide-footer p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .fp-tabs {
+    flex-direction: column;
+  }
+  
+  .fp-tab {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .signals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fp-intro {
+    flex-direction: column;
+  }
+
+  .legend {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

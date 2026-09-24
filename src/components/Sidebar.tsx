@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import {
   Home, Globe, Wifi, BadgeCheck, Cpu, Settings,
   Wrench, Lock, QrCode, FileJson, Binary, Regex,
-  Network, Activity, X, Search, ShieldCheck, Mail, Key, Terminal, Calendar, Laptop
+  Network, Activity, X, Search, ShieldCheck, Mail, Key, Terminal, Calendar, Laptop, Bot
 } from 'lucide-react';
 import './Sidebar.css';
 
@@ -35,6 +35,7 @@ const menuItems = [
   { to: '/regex',             label: 'Testador Regex',          icon: Regex },
   { to: '/chmod-calculator',  label: 'Chmod Calculator',        icon: Terminal },
   { to: '/cron-generator',    label: 'Cron Generator',          icon: Calendar },
+  { to: '/ai-fingerprint',    label: 'AI/Bot Fingerprint',      icon: Bot },
   { to: '/about',             label: 'Sobre',                   icon: Settings },
 ];
 
@@ -72,8 +73,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         </nav>
 
         <div className="sidebar-footer">
-          <span>NetTools</span>
-          <span className="version-badge">v2.0</span>
+          <span>ITKit</span>
+          <span className="version-badge">v3.0</span>
         </div>
       </aside>
     </>

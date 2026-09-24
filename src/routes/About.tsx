@@ -5,8 +5,8 @@ export default function About() {
   return (
     <div className="tool-page">
       <div className="tool-header">
-        <h1>Sobre o NetTools</h1>
-        <p>A ferramenta canivete suíço para profissionais de redes e infraestrutura.</p>
+        <h1>Sobre o ITKit</h1>
+        <p>O canivete suíço digital para profissionais de redes, infraestrutura e desenvolvimento.</p>
       </div>
 
       <div className="about-container">
@@ -16,7 +16,7 @@ export default function About() {
           </div>
           <h2>100% Local e Seguro</h2>
           <p>
-            O NetTools foi projetado como uma <strong>aplicação frontend estática (SPA)</strong>. 
+            O ITKit foi projetado como uma <strong>aplicação frontend estática (SPA)</strong>. 
             Isso significa que todas as ferramentas, geradores de senha, conversores e calculadoras rodam 
             diretamente no seu navegador. <strong>Nenhum dado sensível é enviado para servidores externos.</strong>
           </p>
@@ -36,11 +36,11 @@ export default function About() {
           <div className="about-box glass-panel">
             <h3>Versão Atual</h3>
             <div className="version-info">
-              <span className="version-number">V2.0</span>
+              <span className="version-number">V3.0</span>
               <span className="version-date">Atualizado recentemente</span>
             </div>
             <p className="version-notes">
-              Maior atualização até agora: 10 novos módulos incluindo DNS Lookup, SSL Checker, JWT Decoder, CIDR Planner, Cron Generator, e mais!
+              Renomeado para ITKit + nova ferramenta de detecção de IA e fingerprint de dispositivos na rede!
             </p>
           </div>
         </div>

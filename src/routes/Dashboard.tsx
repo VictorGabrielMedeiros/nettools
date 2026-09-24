@@ -1,4 +1,4 @@
-import { Globe, Wifi, Cpu, BadgeCheck, Wrench, Lock, QrCode, Network, Activity, Search, ShieldCheck, Mail, Key, Terminal, Calendar, Laptop, FileJson, Binary, Regex } from 'lucide-react';
+import { Globe, Wifi, Cpu, BadgeCheck, Wrench, Lock, QrCode, Network, Activity, Search, ShieldCheck, Mail, Key, Terminal, Calendar, Laptop, FileJson, Binary, Regex, Bot } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 
@@ -25,6 +25,7 @@ const tools = [
   { id: 'regex', name: 'Testador Regex', description: 'Teste expressões regulares (Regex).', icon: Regex, path: '/regex' },
   { id: 'chmod-calculator', name: 'Chmod Calculator', description: 'Calcule permissões de arquivos Linux.', icon: Terminal, path: '/chmod-calculator' },
   { id: 'cron-generator', name: 'Cron Generator', description: 'Gere e traduza expressões Cron.', icon: Calendar, path: '/cron-generator' },
+  { id: 'ai-fingerprint', name: 'AI/Bot Fingerprint', description: 'Detecte IAs, bots e dispositivos suspeitos na rede. Inclui guia educativo.', icon: Bot, path: '/ai-fingerprint' },
 ];
 
 export default function Dashboard() {

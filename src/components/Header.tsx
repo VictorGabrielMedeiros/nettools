@@ -29,7 +29,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
           <Menu size={24} />
         </button>
         <div className="header-brand">
-          <span className="brand-name">NetTools</span>
+          <span className="brand-name">ITKit</span>
           <span className="brand-sub">Network &amp; IT Toolkit</span>
         </div>
       </div>

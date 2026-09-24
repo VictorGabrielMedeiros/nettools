@@ -25,6 +25,7 @@ import JwtDecoder from './routes/JwtDecoder';
 import ChmodCalculator from './routes/ChmodCalculator';
 import CronGenerator from './routes/CronGenerator';
 import MacAnalyzer from './routes/MacAnalyzer';
+import AiFingerprint from './routes/AiFingerprint';
 import About from './routes/About';
 import './styles/index.css';
 
@@ -71,6 +72,7 @@ function App() {
               <Route path="/chmod-calculator" element={<ChmodCalculator />} />
               <Route path="/cron-generator" element={<CronGenerator />} />
               <Route path="/mac-analyzer" element={<MacAnalyzer />} />
+              <Route path="/ai-fingerprint" element={<AiFingerprint />} />
               <Route path="/about" element={<About />} />
             </Routes>
           </div>
