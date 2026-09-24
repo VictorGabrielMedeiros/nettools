@@ -19,6 +19,7 @@ interface IpData {
 
 export default function MyIp() {
   const [data, setData] = useState<IpData | null>(null);
+  const [ipv4, setIpv4] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -36,6 +37,21 @@ export default function MyIp() {
       }
 
       setData(result);
+
+      // Tenta forçar a busca do IPv4 caso o provedor principal tenha retornado IPv6
+      try {
+        const v4Res = await fetch('https://api.ipify.org?format=json');
+        if (v4Res.ok) {
+          const v4Data = await v4Res.json();
+          if (v4Data.ip && v4Data.ip !== result.ip) {
+            setIpv4(v4Data.ip);
+          } else {
+            setIpv4(null);
+          }
+        }
+      } catch (e) {
+        setIpv4(null);
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Falha na conexão com o serviço de IP.');
     } finally {
@@ -58,9 +74,12 @@ export default function MyIp() {
         <div className="glass-panel main-ip-card">
           <div className="ip-header">
             <Globe size={48} className="text-accent" />
-            <div>
+            <div style={{ flex: 1, minWidth: 0 }}>
               <h2>{loading ? 'Consultando...' : data?.ip || 'Desconhecido'}</h2>
-              <span className="ip-version">{data?.version || 'IPv4/IPv6'}</span>
+              <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                <span className="ip-version">{data?.version || 'IPv4/IPv6'}</span>
+                {ipv4 && <span className="ip-version" style={{ background: 'rgba(255,255,255,0.1)', color: 'var(--text-secondary)' }}>IPv4 Secundário: {ipv4}</span>}
+              </div>
             </div>
             <button className="btn-icon refresh-btn" onClick={fetchIp} disabled={loading} title="Atualizar">
               <RefreshCw size={20} className={loading ? 'spinning' : ''} />

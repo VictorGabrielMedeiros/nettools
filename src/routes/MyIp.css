@@ -25,6 +25,7 @@
   font-family: var(--mono);
   color: var(--text-primary);
   letter-spacing: -0.02em;
+  word-break: break-all;
 }
 
 .ip-version {
