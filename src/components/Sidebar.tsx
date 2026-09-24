@@ -2,7 +2,8 @@ import { NavLink } from 'react-router-dom';
 import {
   Home, Globe, Wifi, BadgeCheck, Cpu, Settings,
   Wrench, Lock, QrCode, FileJson, Binary, Regex,
-  Network, Activity, X, Search, ShieldCheck, Mail, Key, Terminal, Calendar, Laptop, Bot
+  Network, Activity, X, Search, ShieldCheck, Mail, Key, Terminal, Calendar, Laptop, Bot,
+  MapPin, Hash, Link as LinkIcon, BookOpen
 } from 'lucide-react';
 import './Sidebar.css';
 
@@ -36,6 +37,10 @@ const menuItems = [
   { to: '/chmod-calculator',  label: 'Chmod Calculator',        icon: Terminal },
   { to: '/cron-generator',    label: 'Cron Generator',          icon: Calendar },
   { to: '/ai-fingerprint',    label: 'AI/Bot Fingerprint',      icon: Bot },
+  { to: '/my-ip',             label: 'Meu IP Público',          icon: MapPin },
+  { to: '/hash-generator',    label: 'Hash Generator',          icon: Hash },
+  { to: '/url-encoder',       label: 'URL Encoder',             icon: LinkIcon },
+  { to: '/whois',             label: 'WHOIS / RDAP',            icon: BookOpen },
   { to: '/about',             label: 'Sobre',                   icon: Settings },
 ];
 

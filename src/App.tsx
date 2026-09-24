@@ -26,6 +26,10 @@ import ChmodCalculator from './routes/ChmodCalculator';
 import CronGenerator from './routes/CronGenerator';
 import MacAnalyzer from './routes/MacAnalyzer';
 import AiFingerprint from './routes/AiFingerprint';
+import MyIp from './routes/MyIp';
+import HashGenerator from './routes/HashGenerator';
+import UrlEncoder from './routes/UrlEncoder';
+import WhoisLookup from './routes/WhoisLookup';
 import About from './routes/About';
 import './styles/index.css';
 
@@ -73,6 +77,10 @@ function App() {
               <Route path="/cron-generator" element={<CronGenerator />} />
               <Route path="/mac-analyzer" element={<MacAnalyzer />} />
               <Route path="/ai-fingerprint" element={<AiFingerprint />} />
+              <Route path="/my-ip" element={<MyIp />} />
+              <Route path="/hash-generator" element={<HashGenerator />} />
+              <Route path="/url-encoder" element={<UrlEncoder />} />
+              <Route path="/whois" element={<WhoisLookup />} />
               <Route path="/about" element={<About />} />
             </Routes>
           </div>

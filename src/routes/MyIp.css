@@ -1,0 +1,106 @@
+.myip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+}
+
+.main-ip-card {
+  padding: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ip-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.ip-header h2 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-family: var(--mono);
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.ip-version {
+  display: inline-block;
+  background: var(--accent-glow);
+  color: var(--accent-color);
+  padding: 0.2rem 0.6rem;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.refresh-btn {
+  margin-left: auto;
+  color: var(--text-secondary);
+}
+
+.refresh-btn:hover {
+  color: var(--accent-color);
+  background: var(--accent-glow);
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+.ip-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.ip-detail-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.detail-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.detail-value {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.map-container {
+  padding: 1.5rem;
+}
+
+.map-container h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+  .ip-header h2 {
+    font-size: 1.8rem;
+  }
+}

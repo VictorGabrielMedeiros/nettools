@@ -25,10 +25,13 @@
 - [x] V1.0 — Ferramentas base de rede e utilitários
 - [x] V1.1 — Base64, Port Checker, responsividade mobile
 - [x] V2.0 — 10 novas ferramentas (DNS, CIDR, JWT, Chmod, Cron, MAC, etc.)
-- [ ] V3.0 — Renomear para ITKit + AI/Device Fingerprint na rede
+- [x] V3.0 — Renomeado para ITKit + AI/Device Fingerprint na rede
+- [x] V3.0 — Renomeado para ITKit + AI/Device Fingerprint na rede
+- [ ] V4.0 — Meu IP Público, WHOIS, Hash Generator e URL Encoder
 
-## Funcionalidade V3 — AI Network Fingerprint (pendente)
-- Análise visual de padrões de tráfego HTTP/User-Agent
-- Identificação de fingerprint de dispositivos suspeitos (UA incomum, comportamento de bot)
-- Seção educativa sobre técnicas de detecção de IA e agentes automatizados na rede
-- Login screen: **adiado para versão futura** (V4)
+## Funcionalidade V4 — Ferramentas Compatíveis (Client-Side)
+- **Meu IP Público (IPv4/IPv6)**: Consulta a APIs públicas (ex: ipapi.co) para mostrar IP, provedor (ISP) e localização geográfica sem violar CORS.
+- **Hash Generator**: SHA-1, SHA-256, SHA-512 (usando Web Crypto API nativa do navegador).
+- **URL/URI Encoder/Decoder**: Conversão de strings para formato seguro de URL.
+- **WHOIS Lookup (via API pública)**: Consulta de registro de domínios usando serviços gratuitos com CORS liberado.
+- Login screen: **adiado para versão futura** (V5+)

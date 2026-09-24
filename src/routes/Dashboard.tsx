@@ -1,4 +1,4 @@
-import { Globe, Wifi, Cpu, BadgeCheck, Wrench, Lock, QrCode, Network, Activity, Search, ShieldCheck, Mail, Key, Terminal, Calendar, Laptop, FileJson, Binary, Regex, Bot } from 'lucide-react';
+import { Globe, Wifi, Cpu, BadgeCheck, Wrench, Lock, QrCode, Network, Activity, Search, ShieldCheck, Mail, Key, Terminal, Calendar, Laptop, FileJson, Binary, Regex, Bot, MapPin, Hash, Link as LinkIcon, BookOpen } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 
@@ -26,6 +26,10 @@ const tools = [
   { id: 'chmod-calculator', name: 'Chmod Calculator', description: 'Calcule permissões de arquivos Linux.', icon: Terminal, path: '/chmod-calculator' },
   { id: 'cron-generator', name: 'Cron Generator', description: 'Gere e traduza expressões Cron.', icon: Calendar, path: '/cron-generator' },
   { id: 'ai-fingerprint', name: 'AI/Bot Fingerprint', description: 'Detecte IAs, bots e dispositivos suspeitos na rede. Inclui guia educativo.', icon: Bot, path: '/ai-fingerprint' },
+  { id: 'my-ip', name: 'Meu IP Público', description: 'Descubra seu endereço IP atual, provedor (ISP) e localização geográfica.', icon: MapPin, path: '/my-ip' },
+  { id: 'hash-generator', name: 'Hash Generator', description: 'Gere hashes SHA (1, 256, 512) usando a API nativa do navegador.', icon: Hash, path: '/hash-generator' },
+  { id: 'url-encoder', name: 'URL Encoder', description: 'Codifique ou decodifique URLs contendo caracteres especiais com segurança.', icon: LinkIcon, path: '/url-encoder' },
+  { id: 'whois', name: 'WHOIS / RDAP', description: 'Consulte informações públicas de domínios, expiração e nameservers.', icon: BookOpen, path: '/whois' },
 ];
 
 export default function Dashboard() {
