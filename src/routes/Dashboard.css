@@ -2,6 +2,30 @@
   margin-bottom: 2rem;
 }
 
+.dashboard-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.dashboard-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.group-header h2 {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+.group-header p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
 .tools-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
