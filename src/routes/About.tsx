@@ -36,11 +36,11 @@ export default function About() {
           <div className="about-box glass-panel">
             <h3>Versão Atual</h3>
             <div className="version-info">
-              <span className="version-number">V3.0</span>
+              <span className="version-number">V4.2</span>
               <span className="version-date">Atualizado recentemente</span>
             </div>
             <p className="version-notes">
-              Renomeado para ITKit + nova ferramenta de detecção de IA e fingerprint de dispositivos na rede!
+              Categorias organizadas em tópicos recolhíveis no menu lateral, ícones por seção com destaque e nova ferramenta Meu IP Público!
             </p>
           </div>
         </div>

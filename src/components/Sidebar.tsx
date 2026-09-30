@@ -1,9 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import {
   Home, Globe, Wifi, BadgeCheck, Cpu, Settings,
   Wrench, Lock, QrCode, FileJson, Binary, Regex,
   Network, Activity, X, Search, ShieldCheck, Mail, Key, Terminal, Calendar, Laptop, Bot,
-  MapPin, Hash, Link as LinkIcon, BookOpen
+  MapPin, Hash, Link as LinkIcon, BookOpen, ChevronRight
 } from 'lucide-react';
 import './Sidebar.css';
 
@@ -15,6 +16,7 @@ interface SidebarProps {
 const menuGroups = [
   {
     title: 'Geral',
+    icon: Home,
     items: [
       { to: '/dashboard', label: 'Dashboard', icon: Home },
       { to: '/about', label: 'Sobre', icon: Settings },
@@ -22,6 +24,7 @@ const menuGroups = [
   },
   {
     title: 'Redes & IP',
+    icon: Network,
     items: [
       { to: '/my-ip', label: 'Meu IP Público', icon: MapPin },
       { to: '/ipv4', label: 'Calculadora IPv4', icon: Globe },
@@ -36,6 +39,7 @@ const menuGroups = [
   },
   {
     title: 'Segurança & DNS',
+    icon: ShieldCheck,
     items: [
       { to: '/dns-lookup', label: 'DNS Lookup', icon: Search },
       { to: '/whois', label: 'WHOIS / RDAP', icon: BookOpen },
@@ -48,6 +52,7 @@ const menuGroups = [
   },
   {
     title: 'Utilitários & Criptografia',
+    icon: Key,
     items: [
       { to: '/password', label: 'Gerador de Senhas', icon: Lock },
       { to: '/base64', label: 'Base64 Encoder', icon: Binary },
@@ -58,6 +63,7 @@ const menuGroups = [
   },
   {
     title: 'Dev & Sysadmin',
+    icon: Terminal,
     items: [
       { to: '/regex', label: 'Testador Regex', icon: Regex },
       { to: '/json', label: 'Formatador JSON', icon: FileJson },
@@ -70,6 +76,44 @@ const menuGroups = [
 ];
 
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
+  const location = useLocation();
+
+  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>(() => {
+    const initialState: Record<string, boolean> = {
+      'Geral': true,
+      'Redes & IP': false,
+      'Segurança & DNS': false,
+      'Utilitários & Criptografia': false,
+      'Dev & Sysadmin': false
+    };
+
+    menuGroups.forEach(group => {
+      if (group.items.some(item => item.to === location.pathname)) {
+        initialState[group.title] = true;
+      }
+    });
+
+    return initialState;
+  });
+
+  useEffect(() => {
+    menuGroups.forEach(group => {
+      if (group.items.some(item => item.to === location.pathname)) {
+        setExpandedGroups(prev => ({
+          ...prev,
+          [group.title]: true
+        }));
+      }
+    });
+  }, [location.pathname]);
+
+  const toggleGroup = (title: string) => {
+    setExpandedGroups(prev => ({
+      ...prev,
+      [title]: !prev[title]
+    }));
+  };
+
   return (
     <>
       {/* Mobile overlay */}
@@ -84,32 +128,46 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         </div>
 
         <nav className="menu">
-          {menuGroups.map((group) => (
-            <div key={group.title} className="menu-group">
-              <div className="menu-group-title">{group.title}</div>
-              {group.items.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <NavLink
-                    key={item.to}
-                    to={item.to}
-                    onClick={onClose}
-                    className={({ isActive }) =>
-                      'menu-item' + (isActive ? ' active' : '')
-                    }
-                  >
-                    <Icon size={20} />
-                    <span>{item.label}</span>
-                  </NavLink>
-                );
-              })}
-            </div>
-          ))}
+          {menuGroups.map((group) => {
+            const GroupIcon = group.icon;
+            const isExpanded = expandedGroups[group.title];
+            
+            return (
+              <div key={group.title} className={`menu-group ${isExpanded ? 'expanded' : ''}`}>
+                <button className="menu-group-title" onClick={() => toggleGroup(group.title)}>
+                  <div className="group-title-content">
+                    <GroupIcon size={16} />
+                    <span>{group.title}</span>
+                  </div>
+                  <ChevronRight size={16} className={`group-chevron ${isExpanded ? 'open' : ''}`} />
+                </button>
+                
+                <div className={`menu-group-items ${isExpanded ? 'open' : ''}`}>
+                  {group.items.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <NavLink
+                        key={item.to}
+                        to={item.to}
+                        onClick={onClose}
+                        className={({ isActive }) =>
+                          'menu-item' + (isActive ? ' active' : '')
+                        }
+                      >
+                        <Icon size={18} />
+                        <span>{item.label}</span>
+                      </NavLink>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
         </nav>
 
         <div className="sidebar-footer">
           <span>ITKit</span>
-          <span className="version-badge">v4.0</span>
+          <span className="version-badge">v4.2</span>
         </div>
       </aside>
     </>
