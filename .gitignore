@@ -17,6 +17,6 @@ node_modules
 .DS_Store
 *.suo
 *.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Local agent config & rules
+.agents
+.gemini
