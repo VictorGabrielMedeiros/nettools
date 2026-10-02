@@ -9,6 +9,8 @@ import { wireguardGenerator } from './wireguard';
 import { ntpGenerator } from './ntp';
 import { routesGenerator } from './routes';
 import { dnsGenerator } from './dns';
+import { failoverGenerator } from './failover';
+import { loadbalanceGenerator } from './loadbalance';
 
 /**
  * Registry de geradores do MikroTik.
@@ -26,6 +28,8 @@ export const mikrotikGenerators: MikrotikGenerator[] = [
   dhcpGenerator,
   natGenerator,
   pppoeGenerator,
+  failoverGenerator,
+  loadbalanceGenerator,
   wireguardGenerator,
   ntpGenerator,
   routesGenerator,
@@ -47,4 +51,6 @@ export {
   ntpGenerator,
   routesGenerator,
   dnsGenerator,
+  failoverGenerator,
+  loadbalanceGenerator,
 };
