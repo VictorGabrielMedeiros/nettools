@@ -36,11 +36,11 @@ export default function About() {
           <div className="about-box glass-panel">
             <h3>Versão Atual</h3>
             <div className="version-info">
-              <span className="version-number">V4.2</span>
+              <span className="version-number">V4.5</span>
               <span className="version-date">Atualizado recentemente</span>
             </div>
             <p className="version-notes">
-              Categorias organizadas em tópicos recolhíveis no menu lateral, ícones por seção com destaque e nova ferramenta Meu IP Público!
+              MikroTik Tools modularizado com prevenção ativa de incompatibilidades (RouterOS v6 vs v7), novos geradores de Failover Recursivo e Load Balance PCC, além de menu lateral retrátil!
             </p>
           </div>
         </div>

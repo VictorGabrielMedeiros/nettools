@@ -167,7 +167,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
         <div className="sidebar-footer">
           <span>ITKit</span>
-          <span className="version-badge">v4.2</span>
+          <span className="version-badge">v4.5</span>
         </div>
       </aside>
     </>
